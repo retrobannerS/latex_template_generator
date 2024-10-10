@@ -135,9 +135,8 @@ python3 ./scripts/generate_template.py
 
 В корневой папке вы можете встретить **example** - пример сборки файлов в один PDF.
 
-|                                     |                                     |                                     |
-| ----------------------------------- | ----------------------------------- | ----------------------------------- |
 | [![](/example1.jpg)](/example1.jpg) | [![](/example2.jpg)](/example2.jpg) | [![](/example3.jpg)](/example3.jpg) |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- |
 
 ## Шаблоны
 
@@ -164,4 +163,5 @@ python3 ./scripts/generate_template.py
 В конфигурационном файле [build-conf.toml](/build-conf.toml) есть [настройка вставки собственных преамбул](https://github.com/retrobannerS/latex_template_generator/blob/e5565de0b30b239d3c34c168d4d57dab49b942da/build-conf.toml#L14C1-L16C2). Собственные преамбулы находятся в папке *preambles* и при выполнении [generate_template](/scripts/generate_template.py) помещаются в конец файла **src/template/template.tex**. В проект уже добавлена в качестве демонстрации базовая [преамбула](/preambles/graphics.tex).
 
 Пример вставки [graphics.tex](/preambles/graphics.tex) в конец **src/template/template.tex**:
-[<img src="drawing.jpg" width="200"/>](/example4.png)
+
+[<img src="/example4.png.jpg" width="800"/>](/example4.png)
