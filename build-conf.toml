@@ -1,12 +1,19 @@
+[image-optimization]
+enabled  = true
+quality  = 95
+max-size = 1500
+
 [pandoc]
 args = [
     "--pdf-engine=xelatex",                                     # использовать XeLaTeX как PDF-движок
     "--template=templates/eisvogel-custom_mephi_titlepage.tex", # шаблон для оформления документа
     "--listings",                                               # включить поддержку вставки кода в документе
     "--metadata-file=tmp/metadata.yaml",                        # файл с метаданными
-    "--citeproc",                                               # включить обработку цитирований
+    # "--citeproc",                                             # включить обработку цитирований, нужно указать bibliography
 ]
-preambles = ["graphics.tex"]
+preambles = [
+    "graphics.tex"
+]
 
 [metadata.general]
 title = "Название документа"
@@ -21,7 +28,7 @@ lang = "ru"
 [metadata.layout]
 # block-headings = true                                                      # изменяет поведение заголовков, см. документацию т.к. есть подводные камни
 # classoption = "a4paper, 12pt, ..."                                         # опции класса документа
-documentclass = "scrreprt"                                                   # параметр класса документа(scrartct, scrbook или scrreprt), если book или report(scrbook или scrreport), то включить параметр book 
+documentclass = "scrreprt"                                                   # параметр класса документа(scrartcl, scrbook или scrreprt), если book или report(scrbook или scrreport), то включить параметр book 
 geometry = "left=2cm, right=2cm, top=2cm, bottom=2cm, footskip=5cm"          # поля страницы
 # hyperrefoptions = "linktoc=all, pdfwindowui, pdfpagemode=FullScreen, ..."  # опции гиперссылок
 indent = true                                                                # отступы в абзацах
@@ -94,10 +101,10 @@ toc-depth = 2            # глубина оглавления
 # biblatexoptions = []               # опции для пакета biblatex
 # biblio-style = "alphabetic"        # стиль библиографии
 # biblio-title = "Список литературы" # заголовок библиографии
-bibliography = "references.bib"      # путь к файлу библиографии
+# bibliography = "references.bib"    # путь к файлу библиографии
 # natbiboptions = []                 # опции для пакета natbib
 
-# Настройка шаблона eisvogel. Подробнее https://github.com/enhuiz/eisvogel
+# Настройка шаблона eisvogel. Подробнее https://github.com/Wandmalfarbe/pandoc-latex-template
 
 [metadata.template.titlepage]
 titlepage = true                            # включить титульную страницу
@@ -155,11 +162,11 @@ book = true                 # если book или report (scrbook или scrrep
 
 
 [metadata.latex]
-header-includes = '''
-header-includes: |
-    \usepackage{graphics}
-    \usepackage{float}
-'''                         # дополнительные включения в заголовок LaTeX
+# header-includes = '''
+# header-includes: |
+#     \usepackage[utf8]{inputenc}
+#     \usepackage[normalem]{ulem}
+# '''                         # Дополнительные включения в заголовок LaTeX
 
 # Протестированные включения
 # \usepackage[utf8]{inputenc}                        # может помочь, если проблема с распознаванием русского языка (вы сменили движок или шаблон)
@@ -177,7 +184,3 @@ header-includes: |
 # \exhyphenpenalty=10000                             # запрет переноса строк для верстальщика. Отключение этих двух строк помогает, 
 # \hyphenpenalty=10000                               # если в блоках кода слишком длинные строки не переносятся.
 
-[image-optimization]
-enabled  = false
-quality  = 95
-max-size = 1500
