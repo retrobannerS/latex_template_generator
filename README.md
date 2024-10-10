@@ -164,4 +164,4 @@ python3 ./scripts/generate_template.py
 
 Пример вставки [graphics.tex](/preambles/graphics.tex) в конец **src/template/template.tex**:
 
-[<img src="/example4.png.jpg" width="800"/>](/example4.png)
+![](/example4.png =800x)
