@@ -26,7 +26,7 @@
 Все требуемые библиотеки для *Python* записаны в [requirements.txt](scripts/requirements.txt). Для установки нужно выполнить в терминале(находясь в папке с проектом) следующую команду:
 
 ```bash
-pip install -r src/requirements.txt
+pip3 install -r src/requirements.txt
 ```
 
 ### Pandoc
@@ -75,7 +75,7 @@ brew install --cask basictex
 Для установки на *Unix*/*MacOS* необходимо выполнить следующую команду:
 
 ```bash
-sudo xargs tlmgr install < path_to_project/tex_requirements.txt
+sudo xargs tlmgr install < tex_requirements.txt
 ```
 
 Для *Windows* необходимо выполнить в *PowerShell*:
@@ -116,7 +116,7 @@ Get-Content path_to_project/tex_requirements.txt | ForEach-Object { tlmgr instal
 Запуск *Python* скрипта создает сгенерированный шаблон:
 
 ```bash
-python3 ./scripts/generate_template.py
+python3 scripts/generate_template.py
 ```
 
 Папка **example** и файлы:
